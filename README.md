@@ -14,6 +14,7 @@
 
 ```
 njvtc-freshman-guide/
+├── index.html                     # GitHub Pages 网页入口
 ├── SKILL.md                        # 技能定义文件（含触发规则与回答规则）
 ├── references/
 │   └── knowledge_base.md           # 17 章新生指南知识库
@@ -25,7 +26,11 @@ njvtc-freshman-guide/
 
 ## 使用方式
 
-### 方式一：在 TeleAgent 中安装此技能
+### 方式一：在线浏览网页
+
+访问 GitHub Pages 网页：https://llyj002.github.io/njvtc-freshman-guide/
+
+### 方式二：在 TeleAgent 中安装此技能
 
 1. 下载本仓库的所有文件（点击绿色 `Code` 按钮 → `Download ZIP`，或 `git clone`）
 2. 将 `新生助手_内江_内江职业技术学院` 文件夹复制到 TeleAgent 技能目录：
@@ -38,7 +43,7 @@ njvtc-freshman-guide/
    - "军训什么时候开始？"
    - "怎么去学校？高铁站到学校多远？"
 
-### 方式二：直接查看知识库
+### 方式三：直接查看知识库
 
 如果只需要查阅内容，直接打开 `references/knowledge_base.md` 即可，无需安装 TeleAgent。
 
@@ -72,11 +77,6 @@ njvtc-freshman-guide/
 - 更新日期：2026-08-31
 
 > 标注 `⚠️ 待核实` 的信息建议以学校官方最新通知为准。
-
-## 技术要求
-
-- TeleAgent 桌面应用（用于技能安装与对话使用）
-- 或任意 Markdown 阅读器（仅查看知识库内容）
 
 ## License
 
