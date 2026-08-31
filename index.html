@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>内江职业技术学院新生助手</title>
+<title>内江职业技术学院新生助手 - 25章全量版</title>
 <style>
 :root{--primary:#4797FF;--primary-dark:#2E80E0;--bg:#FAFCFF;--card:#FFFFFF;--text:#1A1A2E;--text-secondary:#5A6B7C;--border:#E8F0FA;--accent:#FF7E47;--tag-bg:#E8F4FF;--tag-text:#2E80E0;--shadow:0 2px 12px rgba(71,151,255,0.08);--radius:12px}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -13,201 +13,261 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 .hero .subtitle{font-size:1.1em;opacity:0.92;margin-bottom:6px}
 .hero .meta{font-size:0.85em;opacity:0.75;margin-top:10px}
 .hero .meta span{margin:0 8px}
-.container{max-width:800px;margin:0 auto;padding:0 20px}
+.hero .badge{display:inline-block;background:rgba(255,255,255,0.2);border-radius:20px;padding:4px 16px;font-size:0.82em;margin-top:12px;backdrop-filter:blur(4px)}
+.container{max-width:840px;margin:0 auto;padding:0 20px}
 .quick-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:-30px 20px 30px;position:relative;z-index:10}
 .quick-bar a{background:var(--card);padding:10px 20px;border-radius:24px;text-decoration:none;color:var(--primary);font-size:0.9em;font-weight:600;box-shadow:var(--shadow);border:1px solid var(--border);transition:all 0.2s}
 .quick-bar a:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
 .section{margin-bottom:36px}
 .section-title{display:flex;align-items:center;gap:10px;font-size:1.25em;font-weight:700;color:var(--primary-dark);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}
 .section-title .num{background:var(--primary);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8em;font-weight:700}
-.chapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.chapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .chapter-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;transition:all 0.25s;cursor:pointer;text-decoration:none;color:var(--text);display:block}
 .chapter-card:hover{border-color:var(--primary);box-shadow:var(--shadow);transform:translateY(-3px)}
 .chapter-card .ch-num{font-size:0.78em;color:var(--tag-text);background:var(--tag-bg);padding:2px 10px;border-radius:10px;display:inline-block;margin-bottom:8px;font-weight:600}
 .chapter-card .ch-title{font-size:1.05em;font-weight:600;margin-bottom:4px}
 .chapter-card .ch-desc{font-size:0.82em;color:var(--text-secondary)}
+.chapter-card.new{border-left:3px solid var(--accent)}
+.chapter-card.new .ch-num{background:#FFF0E8;color:var(--accent)}
 .map-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:36px}
 .map-section img{width:100%;display:block}
-.map-section .map-caption{padding:14px 20px;font-size:0.88em;color:var(--text-secondary);text-align:center}
-.info-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:36px}
-.info-section h3{color:var(--primary-dark);margin-bottom:12px;font-size:1.1em}
-.info-section ul{list-style:none;padding:0}
-.info-section ul li{padding:6px 0;border-bottom:1px solid var(--border);font-size:0.9em;display:flex;justify-content:space-between;align-items:center}
-.info-section ul li:last-child{border-bottom:none}
-.info-section ul li .label{color:var(--text-secondary)}
-.info-section ul li .value{font-weight:600;color:var(--text)}
-.info-section ul li .value a{color:var(--primary);text-decoration:none}
-.action-bar{text-align:center;padding:30px 20px 40px}
-.action-bar p{color:var(--text-secondary);font-size:0.9em;margin-bottom:16px}
-.btn{display:inline-block;padding:12px 32px;border-radius:28px;text-decoration:none;font-weight:600;font-size:1em;transition:all 0.2s}
-.btn-primary{background:var(--primary);color:#fff;box-shadow:0 4px 14px rgba(71,151,255,0.3)}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(71,151,255,0.4)}
-.btn-secondary{background:var(--tag-bg);color:var(--primary);border:1px solid var(--border);margin-left:10px}
-.btn-secondary:hover{background:var(--primary);color:#fff}
-footer{text-align:center;padding:24px 20px;color:var(--text-secondary);font-size:0.82em;border-top:1px solid var(--border)}
-footer a{color:var(--primary);text-decoration:none}
-@media(max-width:600px){.hero h1{font-size:1.6em}.chapters{grid-template-columns:1fr}.quick-bar{margin-top:-25px}.quick-bar a{padding:8px 14px;font-size:0.82em}}
+.map-section .map-caption{padding:12px 20px;font-size:0.85em;color:var(--text-secondary);text-align:center}
+.phone-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:36px}
+.phone-section h3{color:var(--primary-dark);margin-bottom:14px;font-size:1.1em}
+.phone-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.phone-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--border);font-size:0.9em}
+.phone-item .name{color:var(--text-secondary)}
+.phone-item .num{color:var(--primary);font-weight:600;font-family:"Courier New",monospace}
+.footer{text-align:center;padding:40px 20px;color:var(--text-secondary);font-size:0.85em}
+.footer a{color:var(--primary);text-decoration:none}
+.notice{background:#FFF8E8;border:1px solid #FFE0A0;border-radius:var(--radius);padding:16px 20px;margin-bottom:30px;font-size:0.88em;color:#8A6D00;display:flex;align-items:flex-start;gap:10px}
+.notice .icon{font-size:1.2em;flex-shrink:0}
+.stats-bar{display:flex;gap:16px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
+.stat-item{background:var(--card);border-radius:var(--radius);padding:16px 24px;text-align:center;box-shadow:var(--shadow);min-width:100px}
+.stat-item .num{font-size:1.8em;font-weight:700;color:var(--primary)}
+.stat-item .label{font-size:0.78em;color:var(--text-secondary);margin-top:4px}
+@media(max-width:600px){.hero h1{font-size:1.6em}.chapters{grid-template-columns:1fr}.stats-bar{gap:8px}.stat-item{padding:12px 16px;min-width:80px}}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <h1>内江职业技术学院新生助手</h1>
-  <div class="subtitle">2026 级新生入学指南 · 17 章全覆盖</div>
-  <div class="meta">
-    <span>校训：厚德 · 精业 · 行健 · 致远</span>
-    <span>|</span>
-    <span>更新于 2026-08-31</span>
-  </div>
+  <h1>内江职业技术学院</h1>
+  <p class="subtitle">新生助手 · 全量升级版</p>
+  <p class="meta"><span>厚德 · 精业 · 行健 · 致远</span></p>
+  <div class="badge">📚 25章全量知识库 · 2026年8月更新</div>
 </div>
 
 <div class="container">
 
-  <div class="quick-bar">
-    <a href="#chapters">浏览章节</a>
-    <a href="#map">校园地图</a>
-    <a href="#contacts">常用电话</a>
-    <a href="references/knowledge_base.md" target="_blank">查看完整知识库</a>
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="num">25</div>
+      <div class="label">知识章节</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">8</div>
+      <div class="label">二级学院</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">864</div>
+      <div class="label">亩占地面积</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">11000+</div>
+      <div class="label">在校生</div>
+    </div>
   </div>
 
-  <div class="section" id="chapters">
-    <div class="section-title"><span class="num">1</span>入学指南章节导航</div>
+  <div class="quick-bar">
+    <a href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md" target="_blank">📖 完整知识库</a>
+    <a href="#map">🗺️ 校园地图</a>
+    <a href="#phones">📞 常用电话</a>
+    <a href="http://zs.njvtc.edu.cn" target="_blank">🏫 招生网</a>
+  </div>
+
+  <div class="notice">
+    <span class="icon">💡</span>
+    <span><strong>温馨提示</strong>：本页面信息仅供参考，具体政策、收费标准及时间安排请以内江职业技术学院官方及各部门最新通知为准。</span>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="num">📚</span> 25章知识导航</div>
     <div class="chapters">
-      <a class="chapter-card" href="references/knowledge_base.md#一你好新同学" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#一你好新同学" target="_blank">
         <span class="ch-num">第一章</span>
         <div class="ch-title">你好，新同学</div>
-        <div class="ch-desc">学校简介、校区概况、重要电话与网址</div>
+        <div class="ch-desc">学校简介、院系设置、校区概况、重要电话与网址</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#二报到全流程" target="_blank">
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#二录取通知书查询" target="_blank">
         <span class="ch-num">第二章</span>
-        <div class="ch-title">报到全流程</div>
-        <div class="ch-desc">报到准备、线上预报到、报到路线与手续清单</div>
+        <div class="ch-title">录取通知书查询</div>
+        <div class="ch-desc">发放时间、EMS查询流程、录取结果查询、通知书内含材料</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#三校园地图" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#三校园地图" target="_blank">
         <span class="ch-num">第三章</span>
         <div class="ch-title">校园地图</div>
-        <div class="ch-desc">教学楼、宿舍区、食堂、运动场分布</div>
+        <div class="ch-desc">鸟瞰图、建筑分布、教学区/生活区/运动区/行政区</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#四宿舍生活" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#四报到全流程" target="_blank">
         <span class="ch-num">第四章</span>
-        <div class="ch-title">宿舍生活</div>
-        <div class="ch-desc">宿舍类型、设施、作息、门禁、报修、水电费</div>
+        <div class="ch-title">报到全流程</div>
+        <div class="ch-desc">证件清单、线上预报到、报到路线、手续清单、绿色通道</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#五吃喝在校" target="_blank">
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#五开学预备物品清单" target="_blank">
         <span class="ch-num">第五章</span>
-        <div class="ch-title">吃喝在校</div>
-        <div class="ch-desc">食堂分布与特色、营业时间、外卖、周边美食</div>
+        <div class="ch-title">开学预备物品清单</div>
+        <div class="ch-desc">证件材料、电子产品、生活用品、军训用品、医药品清单</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#六生活设施与营业时间" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#六宿舍生活" target="_blank">
         <span class="ch-num">第六章</span>
-        <div class="ch-title">生活设施</div>
-        <div class="ch-desc">澡堂、开水房、洗衣房、打印、快递、理发、超市</div>
+        <div class="ch-title">宿舍生活</div>
+        <div class="ch-desc">6人间配置、空调热水、门禁熄灯、限电规定、洗衣房</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#七运动与休闲" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#七吃喝在校" target="_blank">
         <span class="ch-num">第七章</span>
-        <div class="ch-title">运动与休闲</div>
-        <div class="ch-desc">田径场、球场、体育馆、游泳池、周边娱乐</div>
+        <div class="ch-title">吃喝在校</div>
+        <div class="ch-desc">食堂楼层、营业时间、外卖、蜜雪冰城、便利店</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#八军训攻略" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#八生活设施与营业时间" target="_blank">
         <span class="ch-num">第八章</span>
-        <div class="ch-title">军训攻略</div>
-        <div class="ch-desc">军训时间、服装物资、训练内容、请假免训</div>
+        <div class="ch-title">生活设施与营业时间</div>
+        <div class="ch-desc">打印快递理发超市银行营业厅WiFi开水洗衣房</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#九学习指南" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#九运动与休闲" target="_blank">
         <span class="ch-num">第九章</span>
-        <div class="ch-title">学习指南</div>
-        <div class="ch-desc">选课、课表、图书馆、四六级、绩点、转专业</div>
+        <div class="ch-title">运动与休闲</div>
+        <div class="ch-desc">田径场篮球网球体育馆、开放时间、周边游泳</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十出行交通" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十军训攻略" target="_blank">
         <span class="ch-num">第十章</span>
-        <div class="ch-title">出行交通</div>
-        <div class="ch-desc">校内出行、公交、地铁、高铁、周末出行、共享出行</div>
+        <div class="ch-title">军训攻略</div>
+        <div class="ch-desc">时间安排、免训缓训、防晒鞋垫、汇演流程</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十一医疗与安全" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十一学习指南" target="_blank">
         <span class="ch-num">第十一章</span>
-        <div class="ch-title">医疗与安全</div>
-        <div class="ch-desc">校医院、三甲医院、心理咨询、校园安保、防诈骗</div>
+        <div class="ch-title">学习指南</div>
+        <div class="ch-desc">选课绩点转专业、四六级、图书馆、教务系统、考试纪律</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十二财务管理" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十二出行交通" target="_blank">
         <span class="ch-num">第十二章</span>
-        <div class="ch-title">财务管理</div>
-        <div class="ch-desc">学费住宿费、缴费方式、一卡通、奖学金、勤工助学</div>
+        <div class="ch-title">出行交通</div>
+        <div class="ch-desc">公交地铁高铁出行方式、周末景点、打车拼车</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十三社团与组织" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十三医疗与安全" target="_blank">
         <span class="ch-num">第十三章</span>
-        <div class="ch-title">社团与组织</div>
-        <div class="ch-desc">学生会、社团分类、招新时间、加入渠道</div>
+        <div class="ch-title">医疗与安全</div>
+        <div class="ch-desc">校医院看病医保、心理咨询、安保消防急救</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十四必知校规" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十四财务管理" target="_blank">
         <span class="ch-num">第十四章</span>
-        <div class="ch-title">必知校规</div>
-        <div class="ch-desc">请销假、考勤旷课、考试纪律、宿舍管理、电器使用</div>
+        <div class="ch-title">财务管理</div>
+        <div class="ch-desc">学费住宿费缴费方式、奖学金勤工助学绿色通道</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十五周边生活圈" target="_blank">
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十五生源地助学贷款指南" target="_blank">
         <span class="ch-num">第十五章</span>
-        <div class="ch-title">周边生活圈</div>
-        <div class="ch-desc">校门口商圈、购物、银行、餐馆推荐</div>
+        <div class="ch-title">生源地助学贷款指南</div>
+        <div class="ch-desc">国开行/农商银行/中国银行/农行办理流程、贷款回执</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十六家长送校指南" target="_blank">
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十六助学金与校内资助" target="_blank">
         <span class="ch-num">第十六章</span>
-        <div class="ch-title">家长送校指南</div>
-        <div class="ch-desc">车辆入校、家长住宿、在校用餐、分别时刻</div>
+        <div class="ch-title">助学金与校内资助</div>
+        <div class="ch-desc">国家助学金、困难认定、申请表填写、退单误区、社保绑定</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#十七学期日历" target="_blank">
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十七社团与组织" target="_blank">
         <span class="ch-num">第十七章</span>
-        <div class="ch-title">学期日历</div>
-        <div class="ch-desc">校历、重要节点、每月备忘</div>
+        <div class="ch-title">社团与组织</div>
+        <div class="ch-desc">社团 list、学生会团委、长江艺术团、招新时间</div>
       </a>
-      <a class="chapter-card" href="references/knowledge_base.md#附录" target="_blank">
-        <span class="ch-num">附录</span>
-        <div class="ch-title">常用信息速查</div>
-        <div class="ch-desc">电话簿、网址、WiFi、快递地址、紧急联系人</div>
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十八必知校规" target="_blank">
+        <span class="ch-num">第十八章</span>
+        <div class="ch-title">必知校规</div>
+        <div class="ch-desc">请假销假旷课处分、考试纪律、宿舍管理、大功率电器、网络使用</div>
+      </a>
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#十九防骗指南与校园安全防范" target="_blank">
+        <span class="ch-num">第十九章</span>
+        <div class="ch-title">防骗指南与校园安全防范</div>
+        <div class="ch-desc">常见诈骗类型、刷单贷款诈骗防范、反诈APP、应急处理</div>
+      </a>
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#二十周边生活圈" target="_blank">
+        <span class="ch-num">第二十章</span>
+        <div class="ch-title">周边生活圈</div>
+        <div class="ch-desc">夜市超市商圈餐馆美食、干洗驾校等生活服务</div>
+      </a>
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#二十一家长送校指南" target="_blank">
+        <span class="ch-num">第二十一章</span>
+        <div class="ch-title">家长送校指南</div>
+        <div class="ch-desc">家长住宿推荐、车辆入校指引、送别注意事项</div>
+      </a>
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#二十二专业大揭秘" target="_blank">
+        <span class="ch-num">第二十二章</span>
+        <div class="ch-title">专业大揭秘</div>
+        <div class="ch-desc">8个二级学院专业详解、学什么、就业方向</div>
+      </a>
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#二十三电脑选购指南" target="_blank">
+        <span class="ch-num">第二十三章</span>
+        <div class="ch-title">电脑选购指南</div>
+        <div class="ch-desc">各专业电脑配置需求、轻薄本vs独显、预算分级推荐</div>
+      </a>
+      <a class="chapter-card new" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#二十四手机必备app与官方公众号" target="_blank">
+        <span class="ch-num">第二十四章</span>
+        <div class="ch-title">手机必备APP与官方公众号</div>
+        <div class="ch-desc">智慧内职、超星学习通、教务系统、官方公众号一览</div>
+      </a>
+      <a class="chapter-card" href="https://github.com/LLYJ002/njvtc-freshman-guide/blob/main/references/knowledge_base.md#二十五学期日历" target="_blank">
+        <span class="ch-num">第二十五章</span>
+        <div class="ch-title">学期日历</div>
+        <div class="ch-desc">校历、放假安排、考试周、重要时间节点</div>
       </a>
     </div>
   </div>
 
-  <div class="map-section" id="map">
-    <div class="section-title" style="padding:20px 20px 10px;border-bottom:none"><span class="num">2</span>校园鸟瞰图</div>
-    <img src="assets/campus_map.png" alt="内江职业技术学院校园鸟瞰图" loading="lazy">
-    <div class="map-caption">内江职业技术学院校园鸟瞰图 · 点击图片可放大查看</div>
+  <div class="section" id="map">
+    <div class="section-title"><span class="num">🗺️</span> 校园鸟瞰图</div>
+    <div class="map-section">
+      <img src="assets/campus_map.png" alt="内江职业技术学院校园鸟瞰图">
+      <div class="map-caption">内江职业技术学院校园鸟瞰图 · 点击图片可放大查看</div>
+    </div>
   </div>
 
-  <div class="info-section" id="contacts">
-    <div class="section-title" style="padding:0 0 10px;border-bottom:2px solid var(--border);margin-bottom:16px"><span class="num">3</span>常用联系电话</div>
-    <ul>
-      <li><span class="label">院办</span><span class="value">0832-2262348</span></li>
-      <li><span class="label">招生办</span><span class="value">0832-2265927 / 2261439</span></li>
-      <li><span class="label">成教</span><span class="value">0832-2101395</span></li>
-      <li><span class="label">学校官网</span><span class="value"><a href="https://www.njvtc.edu.cn" target="_blank">www.njvtc.edu.cn</a></span></li>
-      <li><span class="label">招生网</span><span class="value"><a href="http://zs.njvtc.edu.cn" target="_blank">zs.njvtc.edu.cn</a></span></li>
-      <li><span class="label">教务网</span><span class="value"><a href="http://jwc.njvtc.edu.cn" target="_blank">jwc.njvtc.edu.cn</a></span></li>
-      <li><span class="label">图书馆</span><span class="value"><a href="http://lib.njvtc.edu.cn" target="_blank">lib.njvtc.edu.cn</a></span></li>
-      <li><span class="label">校址</span><span class="value">内江市东兴区汉安大道东段199号</span></li>
-    </ul>
+  <div class="section" id="phones">
+    <div class="section-title"><span class="num">📞</span> 常用电话速查</div>
+    <div class="phone-section">
+      <div class="phone-grid">
+        <div class="phone-item"><span class="name">院办</span><span class="num">0832-2262348</span></div>
+        <div class="phone-item"><span class="name">招生办</span><span class="num">0832-2265927</span></div>
+        <div class="phone-item"><span class="name">招生办</span><span class="num">0832-2261439</span></div>
+        <div class="phone-item"><span class="name">成教</span><span class="num">0832-2101395</span></div>
+        <div class="phone-item"><span class="name">学工部</span><span class="num">0832-2269063</span></div>
+        <div class="phone-item"><span class="name">资助中心</span><span class="num">0832-2261729</span></div>
+        <div class="phone-item"><span class="name">校园110</span><span class="num">0832-2265273</span></div>
+        <div class="phone-item"><span class="name">校医院</span><span class="num">24小时值班</span></div>
+      </div>
+    </div>
   </div>
 
-  <div class="info-section">
-    <div class="section-title" style="padding:0 0 10px;border-bottom:2px solid var(--border);margin-bottom:16px"><span class="num">4</span>使用 TeleAgent 智能问答</div>
-    <p style="color:var(--text-secondary);font-size:0.9em;line-height:1.9">除了浏览本网页，你还可以在「TeleAgent」桌面应用中安装本技能，直接在对话中提问，AI 会自动从知识库中找到答案并回答你。</p>
-    <ul style="margin-top:12px">
-      <li><span class="label">安装方式</span><span class="value">点击下方「下载技能文件」</span></li>
-      <li><span class="label">技能目录</span><span class="value" style="font-size:0.82em">C:\Users\用户名\.config\TeleAgent\skills\</span></li>
-      <li><span class="label">使用方式</span><span class="value">重启 TeleAgent 后直接提问</span></li>
-    </ul>
+  <div class="section">
+    <div class="section-title"><span class="num">🔗</span> 常用网址</div>
+    <div class="phone-section">
+      <div class="phone-grid">
+        <div class="phone-item"><span class="name">学校官网</span><span class="num">njvtc.edu.cn</span></div>
+        <div class="phone-item"><span class="name">招生网</span><span class="num">zs.njvtc.edu.cn</span></div>
+        <div class="phone-item"><span class="name">教务网</span><span class="num">jwc.njvtc.edu.cn</span></div>
+        <div class="phone-item"><span class="name">图书馆</span><span class="num">lib.njvtc.edu.cn</span></div>
+        <div class="phone-item"><span class="name">就业网</span><span class="num">jy.njvtc.edu.cn</span></div>
+        <div class="phone-item"><span class="name">学工部</span><span class="num">xsc.njvtc.edu.cn</span></div>
+      </div>
+    </div>
   </div>
 
 </div>
 
-<div class="action-bar">
-  <p>标注「待核实」的信息建议以学校官方最新通知为准</p>
-  <a href="https://github.com/LLYJ002/njvtc-freshman-guide/archive/refs/heads/main.zip" class="btn btn-primary">下载技能文件 (ZIP)</a>
-  <a href="https://github.com/LLYJ002/njvtc-freshman-guide" class="btn btn-secondary">查看 GitHub 仓库</a>
+<div class="footer">
+  <p>内江职业技术学院新生助手 · 25章全量升级版</p>
+  <p>数据来源：学校官网 + 招生网 + 学工部 + 官方采购公告</p>
+  <p>更新日期：2026年8月 · <a href="https://github.com/LLYJ002/njvtc-freshman-guide">GitHub 仓库</a></p>
+  <p style="margin-top:8px;opacity:0.7">💡 具体政策、收费标准及时间安排请以学校官方及各部门最新通知为准</p>
 </div>
-
-<footer>
-  内江职业技术学院新生助手 · 数据来源：学校官网 + 校内人员确认<br>
-  <a href="https://github.com/LLYJ002/njvtc-freshman-guide">GitHub 仓库</a> · 本页面由 TeleAgent 自动生成
-</footer>
 
 </body>
 </html>
