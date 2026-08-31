@@ -5,82 +5,145 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>内江职业技术学院新生助手 - 25章全量版</title>
 <style>
-:root{--primary:#4797FF;--primary-dark:#2E80E0;--bg:#FAFCFF;--card:#FFFFFF;--text:#1A1A2E;--text-secondary:#5A6B7C;--border:#E8F0FA;--accent:#FF7E47;--tag-bg:#E8F4FF;--tag-text:#2E80E0;--shadow:0 2px 12px rgba(71,151,255,0.08);--radius:12px}
+:root{--primary:#4797FF;--primary-dark:#2E80E0;--primary-light:#E8F4FF;--bg:#F0F5FA;--card:#FFFFFF;--text:#1A2238;--text-secondary:#6B7A90;--border:#E2EAF4;--accent:#FF7E47;--accent-light:#FFF0E8;--green:#52C41A;--shadow-sm:0 1px 3px rgba(71,151,255,0.06);--shadow:0 2px 12px rgba(71,151,255,0.08);--shadow-lg:0 8px 32px rgba(71,151,255,0.12);--radius:14px;--radius-sm:8px}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
-.hero{background:linear-gradient(135deg,#4797FF 0%,#6AB4FF 100%);color:#fff;text-align:center;padding:60px 20px 48px}
-.hero h1{font-size:2.2em;font-weight:700;margin-bottom:8px;letter-spacing:2px}
-.hero .subtitle{font-size:1.1em;opacity:0.92;margin-bottom:6px}
-.hero .meta{font-size:0.85em;opacity:0.75;margin-top:10px}
-.hero .meta span{margin:0 8px}
-.hero .badge{display:inline-block;background:rgba(255,255,255,0.2);border-radius:20px;padding:4px 16px;font-size:0.82em;margin-top:12px;backdrop-filter:blur(4px)}
-.container{max-width:840px;margin:0 auto;padding:0 20px}
-.quick-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:-30px 20px 30px;position:relative;z-index:10}
-.quick-bar a{background:var(--card);padding:10px 20px;border-radius:24px;text-decoration:none;color:var(--primary);font-size:0.9em;font-weight:600;box-shadow:var(--shadow);border:1px solid var(--border);transition:all 0.2s}
-.quick-bar a:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
-.section{margin-bottom:36px}
-.section-title{display:flex;align-items:center;gap:10px;font-size:1.25em;font-weight:700;color:var(--primary-dark);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}
-.section-title .num{background:var(--primary);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8em;font-weight:700}
-.chapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.chapter-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;transition:all 0.25s;cursor:pointer;text-decoration:none;color:var(--text);display:block}
-.chapter-card:hover{border-color:var(--primary);box-shadow:var(--shadow);transform:translateY(-3px)}
-.chapter-card .ch-num{font-size:0.78em;color:var(--tag-text);background:var(--tag-bg);padding:2px 10px;border-radius:10px;display:inline-block;margin-bottom:8px;font-weight:600}
-.chapter-card .ch-title{font-size:1.05em;font-weight:600;margin-bottom:4px}
-.chapter-card .ch-desc{font-size:0.82em;color:var(--text-secondary)}
-.chapter-card.new{border-left:3px solid var(--accent)}
-.chapter-card.new .ch-num{background:#FFF0E8;color:var(--accent)}
-.map-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:36px}
-.map-section img{width:100%;display:block}
-.map-section .map-caption{padding:12px 20px;font-size:0.85em;color:var(--text-secondary);text-align:center}
-.phone-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:36px}
-.phone-section h3{color:var(--primary-dark);margin-bottom:14px;font-size:1.1em}
-.phone-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
-.phone-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--border);font-size:0.9em}
-.phone-item .name{color:var(--text-secondary)}
-.phone-item .num{color:var(--primary);font-weight:600;font-family:"Courier New",monospace}
-.footer{text-align:center;padding:40px 20px;color:var(--text-secondary);font-size:0.85em}
-.footer a{color:var(--primary);text-decoration:none}
-.notice{background:#FFF8E8;border:1px solid #FFE0A0;border-radius:var(--radius);padding:16px 20px;margin-bottom:30px;font-size:0.88em;color:#8A6D00;display:flex;align-items:flex-start;gap:10px}
-.notice .icon{font-size:1.2em;flex-shrink:0}
-.stats-bar{display:flex;gap:16px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
-.stat-item{background:var(--card);border-radius:var(--radius);padding:16px 24px;text-align:center;box-shadow:var(--shadow);min-width:100px}
-.stat-item .num{font-size:1.8em;font-weight:700;color:var(--primary)}
-.stat-item .label{font-size:0.78em;color:var(--text-secondary);margin-top:4px}
-@media(max-width:600px){.hero h1{font-size:1.6em}.chapters{grid-template-columns:1fr}.stats-bar{gap:8px}.stat-item{padding:12px 16px;min-width:80px}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* Hero */
+.hero{position:relative;background:linear-gradient(135deg,#2E80E0 0%,#4797FF 40%,#6AB4FF 100%);color:#fff;text-align:center;padding:64px 20px 56px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(255,255,255,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(255,255,255,0.1) 0%,transparent 40%)}
+.hero-inner{position:relative;z-index:1}
+.hero h1{font-size:2.3em;font-weight:800;margin-bottom:10px;letter-spacing:3px;text-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.hero .subtitle{font-size:1.1em;opacity:0.95;margin-bottom:4px;font-weight:300}
+.hero .motto{font-size:0.88em;opacity:0.7;margin-top:12px;letter-spacing:4px;font-weight:300}
+.hero .badges{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.hero .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);border-radius:24px;padding:6px 16px;font-size:0.82em;font-weight:500;transition:all 0.2s}
+.hero .badge:hover{background:rgba(255,255,255,0.25)}
+
+/* Container */
+.container{max-width:880px;margin:0 auto;padding:0 20px}
+
+/* Stats */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-36px 0 28px;position:relative;z-index:10}
+.stat-item{background:var(--card);border-radius:var(--radius);padding:20px 14px;text-align:center;box-shadow:var(--shadow-lg);transition:transform 0.25s,box-shadow 0.25s}
+.stat-item:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(71,151,255,0.16)}
+.stat-item .stat-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:1.1em}
+.stat-item:nth-child(1) .stat-icon{background:var(--primary-light);color:var(--primary)}
+.stat-item:nth-child(2) .stat-icon{background:#E8FFF0;color:var(--green)}
+.stat-item:nth-child(3) .stat-icon{background:#FFF3E8;color:var(--accent)}
+.stat-item:nth-child(4) .stat-icon{background:#F0E8FF;color:#7B61FF}
+.stat-item .num{font-size:1.7em;font-weight:800;color:var(--text);line-height:1.1}
+.stat-item .label{font-size:0.76em;color:var(--text-secondary);margin-top:4px;font-weight:500}
+
+/* Quick bar */
+.quick-bar{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.quick-bar a{display:flex;align-items:center;gap:8px;background:var(--card);padding:12px 24px;border-radius:30px;text-decoration:none;color:var(--primary);font-size:0.9em;font-weight:600;box-shadow:var(--shadow);border:1.5px solid var(--border);transition:all 0.25s}
+.quick-bar a:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.quick-bar a.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.quick-bar a.primary:hover{background:var(--primary-dark);transform:translateY(-3px)}
+
+/* Notice */
+.notice{background:linear-gradient(135deg,#FFF8E8,#FFFCF2);border:1px solid #FFE8B0;border-radius:var(--radius);padding:14px 20px;margin-bottom:32px;font-size:0.86em;color:#9A7800;display:flex;align-items:center;gap:12px}
+.notice .icon{font-size:1.3em;flex-shrink:0}
+
+/* Section */
+.section{margin-bottom:40px}
+.section-title{display:flex;align-items:center;gap:10px;font-size:1.2em;font-weight:700;color:var(--text);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.section-title .icon-box{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:0.9em;box-shadow:0 2px 8px rgba(71,151,255,0.25)}
+
+/* Category groups */
+.cat-group{margin-bottom:24px}
+.cat-label{font-size:0.82em;font-weight:700;color:var(--text-secondary);margin-bottom:10px;padding-left:4px;letter-spacing:1px}
+
+/* Chapter cards */
+.chapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.chapter-card{position:relative;background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;transition:all 0.3s;cursor:pointer;text-decoration:none;color:var(--text);display:block;overflow:hidden}
+.chapter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--primary);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.chapter-card:hover{border-color:var(--primary);box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.chapter-card:hover::before{transform:scaleX(1)}
+.chapter-card.new::before{background:var(--accent)}
+.chapter-card .ch-num{font-size:0.74em;color:var(--primary);background:var(--primary-light);padding:3px 12px;border-radius:10px;display:inline-block;margin-bottom:10px;font-weight:600}
+.chapter-card.new .ch-num{background:var(--accent-light);color:var(--accent)}
+.chapter-card .ch-title{font-size:1.02em;font-weight:700;margin-bottom:4px;color:var(--text)}
+.chapter-card .ch-desc{font-size:0.8em;color:var(--text-secondary);line-height:1.5}
+.chapter-card .new-flag{position:absolute;top:14px;right:14px;font-size:0.62em;font-weight:700;color:#fff;background:var(--accent);padding:2px 8px;border-radius:10px;opacity:0.85}
+
+/* Map section */
+.map-section{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+.map-section img{width:100%;display:block;transition:transform 0.3s}
+.map-section:hover img{transform:scale(1.02)}
+.map-section .map-caption{padding:14px 20px;font-size:0.84em;color:var(--text-secondary);text-align:center;background:#FAFCFE}
+
+/* Phone/URL section */
+.info-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow-sm)}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.info-item{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:#F8FAFE;border-radius:var(--radius-sm);font-size:0.88em;transition:background 0.2s}
+.info-item:hover{background:var(--primary-light)}
+.info-item .name{color:var(--text-secondary)}
+.info-item .val{color:var(--primary);font-weight:600;font-family:"Courier New",monospace}
+
+/* Footer */
+.footer{text-align:center;padding:48px 20px 32px;color:var(--text-secondary);font-size:0.84em}
+.footer .divider{width:60px;height:3px;background:var(--primary);border-radius:2px;margin:0 auto 20px}
+.footer a{color:var(--primary);text-decoration:none;font-weight:600}
+.footer .disclaimer{margin-top:12px;padding:10px 20px;background:var(--card);border-radius:var(--radius-sm);display:inline-block;color:#9AB;border:1px solid var(--border)}
+
+/* Responsive */
+@media(max-width:640px){
+  .hero{padding:48px 20px 44px}
+  .hero h1{font-size:1.65em;letter-spacing:2px}
+  .hero .subtitle{font-size:0.98em}
+  .stats-bar{grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat-item{padding:16px 10px}
+  .stat-item .num{font-size:1.4em}
+  .chapters{grid-template-columns:1fr}
+  .quick-bar a{padding:10px 18px;font-size:0.84em}
+}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <h1>内江职业技术学院</h1>
-  <p class="subtitle">新生助手 · 全量升级版</p>
-  <p class="meta"><span>厚德 · 精业 · 行健 · 致远</span></p>
-  <div class="badge">📚 25章全量知识库 · 2026年8月更新</div>
+  <div class="hero-inner">
+    <h1>内江职业技术学院</h1>
+    <p class="subtitle">新生助手 · 全量升级版</p>
+    <p class="motto">厚德 · 精业 · 行健 · 致远</p>
+    <div class="badges">
+      <span class="badge">📚 25章全量知识库</span>
+      <span class="badge">💬 智慧问答助手</span>
+      <span class="badge">🕐 2026年8月更新</span>
+    </div>
+  </div>
 </div>
 
 <div class="container">
 
   <div class="stats-bar">
     <div class="stat-item">
+      <div class="stat-icon">📚</div>
       <div class="num">25</div>
       <div class="label">知识章节</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon">🏫</div>
       <div class="num">8</div>
       <div class="label">二级学院</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon">📐</div>
       <div class="num">864</div>
       <div class="label">亩占地面积</div>
     </div>
     <div class="stat-item">
+      <div class="stat-icon">🎓</div>
       <div class="num">11000+</div>
       <div class="label">在校生</div>
     </div>
   </div>
 
   <div class="quick-bar">
-    <a href="guide.html">💬 智慧问答</a>
+    <a href="guide.html" class="primary">💬 智慧问答</a>
     <a href="guide.html#read">📖 知识库全文</a>
     <a href="#map">🗺️ 校园地图</a>
     <a href="#phones">📞 常用电话</a>
@@ -93,138 +156,180 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">📚</span> 25章知识导航</div>
-    <div class="chapters">
-      <a class="chapter-card" href="guide.html#一-你好，新同学">
-        <span class="ch-num">第一章</span>
-        <div class="ch-title">你好，新同学</div>
-        <div class="ch-desc">学校简介、院系设置、校区概况、重要电话与网址</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#二-录取通知书查询">
-        <span class="ch-num">第二章</span>
-        <div class="ch-title">录取通知书查询</div>
-        <div class="ch-desc">发放时间、EMS查询流程、录取结果查询、通知书内含材料</div>
-      </a>
-      <a class="chapter-card" href="guide.html#三-校园地图">
-        <span class="ch-num">第三章</span>
-        <div class="ch-title">校园地图</div>
-        <div class="ch-desc">鸟瞰图、建筑分布、教学区/生活区/运动区/行政区</div>
-      </a>
-      <a class="chapter-card" href="guide.html#四-报到全流程">
-        <span class="ch-num">第四章</span>
-        <div class="ch-title">报到全流程</div>
-        <div class="ch-desc">证件清单、线上预报到、报到路线、手续清单、绿色通道</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#五-开学预备物品清单">
-        <span class="ch-num">第五章</span>
-        <div class="ch-title">开学预备物品清单</div>
-        <div class="ch-desc">证件材料、电子产品、生活用品、军训用品、医药品清单</div>
-      </a>
-      <a class="chapter-card" href="guide.html#六-宿舍生活">
-        <span class="ch-num">第六章</span>
-        <div class="ch-title">宿舍生活</div>
-        <div class="ch-desc">6人间配置、空调热水、门禁熄灯、限电规定、洗衣房</div>
-      </a>
-      <a class="chapter-card" href="guide.html#七-吃喝在校">
-        <span class="ch-num">第七章</span>
-        <div class="ch-title">吃喝在校</div>
-        <div class="ch-desc">食堂楼层、营业时间、外卖、蜜雪冰城、便利店</div>
-      </a>
-      <a class="chapter-card" href="guide.html#八-生活设施与营业时间">
-        <span class="ch-num">第八章</span>
-        <div class="ch-title">生活设施与营业时间</div>
-        <div class="ch-desc">打印快递理发超市银行营业厅WiFi开水洗衣房</div>
-      </a>
-      <a class="chapter-card" href="guide.html#九-运动与休闲">
-        <span class="ch-num">第九章</span>
-        <div class="ch-title">运动与休闲</div>
-        <div class="ch-desc">田径场篮球网球体育馆、开放时间、周边游泳</div>
-      </a>
-      <a class="chapter-card" href="guide.html#十-军训攻略">
-        <span class="ch-num">第十章</span>
-        <div class="ch-title">军训攻略</div>
-        <div class="ch-desc">时间安排、免训缓训、防晒鞋垫、汇演流程</div>
-      </a>
-      <a class="chapter-card" href="guide.html#十一-学习指南">
-        <span class="ch-num">第十一章</span>
-        <div class="ch-title">学习指南</div>
-        <div class="ch-desc">选课绩点转专业、四六级、图书馆、教务系统、考试纪律</div>
-      </a>
-      <a class="chapter-card" href="guide.html#十二-出行交通">
-        <span class="ch-num">第十二章</span>
-        <div class="ch-title">出行交通</div>
-        <div class="ch-desc">公交地铁高铁出行方式、周末景点、打车拼车</div>
-      </a>
-      <a class="chapter-card" href="guide.html#十三-医疗与安全">
-        <span class="ch-num">第十三章</span>
-        <div class="ch-title">医疗与安全</div>
-        <div class="ch-desc">校医院看病医保、心理咨询、安保消防急救</div>
-      </a>
-      <a class="chapter-card" href="guide.html#十四-财务管理">
-        <span class="ch-num">第十四章</span>
-        <div class="ch-title">财务管理</div>
-        <div class="ch-desc">学费住宿费缴费方式、奖学金勤工助学绿色通道</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#十五-生源地助学贷款指南">
-        <span class="ch-num">第十五章</span>
-        <div class="ch-title">生源地助学贷款指南</div>
-        <div class="ch-desc">国开行/农商银行/中国银行/农行办理流程、贷款回执</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#十六-助学金与校内资助">
-        <span class="ch-num">第十六章</span>
-        <div class="ch-title">助学金与校内资助</div>
-        <div class="ch-desc">国家助学金、困难认定、申请表填写、退单误区、社保绑定</div>
-      </a>
-      <a class="chapter-card" href="guide.html#十七-社团与组织">
-        <span class="ch-num">第十七章</span>
-        <div class="ch-title">社团与组织</div>
-        <div class="ch-desc">社团 list、学生会团委、长江艺术团、招新时间</div>
-      </a>
-      <a class="chapter-card" href="guide.html#十八-必知校规">
-        <span class="ch-num">第十八章</span>
-        <div class="ch-title">必知校规</div>
-        <div class="ch-desc">请假销假旷课处分、考试纪律、宿舍管理、大功率电器、网络使用</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#十九-防骗指南与校园安全防范">
-        <span class="ch-num">第十九章</span>
-        <div class="ch-title">防骗指南与校园安全防范</div>
-        <div class="ch-desc">常见诈骗类型、刷单贷款诈骗防范、反诈APP、应急处理</div>
-      </a>
-      <a class="chapter-card" href="guide.html#二十-周边生活圈">
-        <span class="ch-num">第二十章</span>
-        <div class="ch-title">周边生活圈</div>
-        <div class="ch-desc">夜市超市商圈餐馆美食、干洗驾校等生活服务</div>
-      </a>
-      <a class="chapter-card" href="guide.html#二十一-家长送校指南">
-        <span class="ch-num">第二十一章</span>
-        <div class="ch-title">家长送校指南</div>
-        <div class="ch-desc">家长住宿推荐、车辆入校指引、送别注意事项</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#二十二-专业大揭秘">
-        <span class="ch-num">第二十二章</span>
-        <div class="ch-title">专业大揭秘</div>
-        <div class="ch-desc">8个二级学院专业详解、学什么、就业方向</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#二十三-电脑选购指南">
-        <span class="ch-num">第二十三章</span>
-        <div class="ch-title">电脑选购指南</div>
-        <div class="ch-desc">各专业电脑配置需求、轻薄本vs独显、预算分级推荐</div>
-      </a>
-      <a class="chapter-card new" href="guide.html#二十四-手机必备APP与官方公众号">
-        <span class="ch-num">第二十四章</span>
-        <div class="ch-title">手机必备APP与官方公众号</div>
-        <div class="ch-desc">智慧内职、超星学习通、教务系统、官方公众号一览</div>
-      </a>
-      <a class="chapter-card" href="guide.html#二十五-学期日历">
-        <span class="ch-num">第二十五章</span>
-        <div class="ch-title">学期日历</div>
-        <div class="ch-desc">校历、放假安排、考试周、重要时间节点</div>
-      </a>
+    <div class="section-title"><span class="icon-box">📚</span> 25章知识导航</div>
+
+    <div class="cat-group">
+      <p class="cat-label">🎒 入学准备</p>
+      <div class="chapters">
+        <a class="chapter-card" href="guide.html#一-你好，新同学">
+          <span class="ch-num">第一章</span>
+          <div class="ch-title">你好，新同学</div>
+          <div class="ch-desc">学校简介、院系设置、校区概况、重要电话与网址</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#二-录取通知书查询">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第二章</span>
+          <div class="ch-title">录取通知书查询</div>
+          <div class="ch-desc">发放时间、EMS查询流程、录取结果查询、通知书内含材料</div>
+        </a>
+        <a class="chapter-card" href="guide.html#三-校园地图">
+          <span class="ch-num">第三章</span>
+          <div class="ch-title">校园地图</div>
+          <div class="ch-desc">鸟瞰图、建筑分布、教学区/生活区/运动区/行政区</div>
+        </a>
+        <a class="chapter-card" href="guide.html#四-报到全流程">
+          <span class="ch-num">第四章</span>
+          <div class="ch-title">报到全流程</div>
+          <div class="ch-desc">证件清单、线上预报到、报到路线、手续清单、绿色通道</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#五-开学预备物品清单">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第五章</span>
+          <div class="ch-title">开学预备物品清单</div>
+          <div class="ch-desc">证件材料、电子产品、生活用品、军训用品、医药品清单</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <p class="cat-label">🏠 校园生活</p>
+      <div class="chapters">
+        <a class="chapter-card" href="guide.html#六-宿舍生活">
+          <span class="ch-num">第六章</span>
+          <div class="ch-title">宿舍生活</div>
+          <div class="ch-desc">6人间配置、空调热水、门禁熄灯、限电规定、洗衣房</div>
+        </a>
+        <a class="chapter-card" href="guide.html#七-吃喝在校">
+          <span class="ch-num">第七章</span>
+          <div class="ch-title">吃喝在校</div>
+          <div class="ch-desc">食堂楼层、营业时间、外卖、蜜雪冰城、便利店</div>
+        </a>
+        <a class="chapter-card" href="guide.html#八-生活设施与营业时间">
+          <span class="ch-num">第八章</span>
+          <div class="ch-title">生活设施与营业时间</div>
+          <div class="ch-desc">打印快递理发超市银行营业厅WiFi开水洗衣房</div>
+        </a>
+        <a class="chapter-card" href="guide.html#九-运动与休闲">
+          <span class="ch-num">第九章</span>
+          <div class="ch-title">运动与休闲</div>
+          <div class="ch-desc">田径场篮球网球体育馆、开放时间、周边游泳</div>
+        </a>
+        <a class="chapter-card" href="guide.html#十-军训攻略">
+          <span class="ch-num">第十章</span>
+          <div class="ch-title">军训攻略</div>
+          <div class="ch-desc">时间安排、免训缓训、防晒鞋垫、汇演流程</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <p class="cat-label">📖 学业发展</p>
+      <div class="chapters">
+        <a class="chapter-card" href="guide.html#十一-学习指南">
+          <span class="ch-num">第十一章</span>
+          <div class="ch-title">学习指南</div>
+          <div class="ch-desc">选课绩点转专业、四六级、图书馆、教务系统、考试纪律</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#二十二-专业大揭秘">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第二十二章</span>
+          <div class="ch-title">专业大揭秘</div>
+          <div class="ch-desc">8个二级学院专业详解、学什么、就业方向</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#二十三-电脑选购指南">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第二十三章</span>
+          <div class="ch-title">电脑选购指南</div>
+          <div class="ch-desc">各专业电脑配置需求、轻薄本vs独显、预算分级推荐</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#二十四-手机必备APP与官方公众号">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第二十四章</span>
+          <div class="ch-title">手机必备APP与官方公众号</div>
+          <div class="ch-desc">智慧内职、超星学习通、教务系统、官方公众号一览</div>
+        </a>
+        <a class="chapter-card" href="guide.html#二十五-学期日历">
+          <span class="ch-num">第二十五章</span>
+          <div class="ch-title">学期日历</div>
+          <div class="ch-desc">校历、放假安排、考试周、重要时间节点</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <p class="cat-label">💰 费用与资助</p>
+      <div class="chapters">
+        <a class="chapter-card" href="guide.html#十四-财务管理">
+          <span class="ch-num">第十四章</span>
+          <div class="ch-title">财务管理</div>
+          <div class="ch-desc">学费住宿费缴费方式、奖学金勤工助学绿色通道</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#十五-生源地助学贷款指南">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第十五章</span>
+          <div class="ch-title">生源地助学贷款指南</div>
+          <div class="ch-desc">国开行/农商银行/中国银行/农行办理流程、贷款回执</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#十六-助学金与校内资助">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第十六章</span>
+          <div class="ch-title">助学金与校内资助</div>
+          <div class="ch-desc">国家助学金、困难认定、申请表填写、退单误区、社保绑定</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <p class="cat-label">🛡️ 安全与校规</p>
+      <div class="chapters">
+        <a class="chapter-card" href="guide.html#十七-社团与组织">
+          <span class="ch-num">第十七章</span>
+          <div class="ch-title">社团与组织</div>
+          <div class="ch-desc">社团 list、学生会团委、长江艺术团、招新时间</div>
+        </a>
+        <a class="chapter-card" href="guide.html#十八-必知校规">
+          <span class="ch-num">第十八章</span>
+          <div class="ch-title">必知校规</div>
+          <div class="ch-desc">请假销假旷课处分、考试纪律、宿舍管理、大功率电器、网络使用</div>
+        </a>
+        <a class="chapter-card new" href="guide.html#十九-防骗指南与校园安全防范">
+          <span class="new-flag">NEW</span>
+          <span class="ch-num">第十九章</span>
+          <div class="ch-title">防骗指南与校园安全防范</div>
+          <div class="ch-desc">常见诈骗类型、刷单贷款诈骗防范、反诈APP、应急处理</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cat-group">
+      <p class="cat-label">🚗 出行与周边</p>
+      <div class="chapters">
+        <a class="chapter-card" href="guide.html#十二-出行交通">
+          <span class="ch-num">第十二章</span>
+          <div class="ch-title">出行交通</div>
+          <div class="ch-desc">公交地铁高铁出行方式、周末景点、打车拼车</div>
+        </a>
+        <a class="chapter-card" href="guide.html#十三-医疗与安全">
+          <span class="ch-num">第十三章</span>
+          <div class="ch-title">医疗与安全</div>
+          <div class="ch-desc">校医院看病医保、心理咨询、安保消防急救</div>
+        </a>
+        <a class="chapter-card" href="guide.html#二十-周边生活圈">
+          <span class="ch-num">第二十章</span>
+          <div class="ch-title">周边生活圈</div>
+          <div class="ch-desc">夜市超市商圈餐馆美食、干洗驾校等生活服务</div>
+        </a>
+        <a class="chapter-card" href="guide.html#二十一-家长送校指南">
+          <span class="ch-num">第二十一章</span>
+          <div class="ch-title">家长送校指南</div>
+          <div class="ch-desc">家长住宿推荐、车辆入校指引、送别注意事项</div>
+        </a>
+      </div>
     </div>
   </div>
 
   <div class="section" id="map">
-    <div class="section-title"><span class="num">🗺️</span> 校园鸟瞰图</div>
+    <div class="section-title"><span class="icon-box">🗺️</span> 校园鸟瞰图</div>
     <div class="map-section">
       <img src="assets/campus_map.png" alt="内江职业技术学院校园鸟瞰图">
       <div class="map-caption">内江职业技术学院校园鸟瞰图 · 点击图片可放大查看</div>
@@ -232,31 +337,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
   </div>
 
   <div class="section" id="phones">
-    <div class="section-title"><span class="num">📞</span> 常用电话速查</div>
-    <div class="phone-section">
-      <div class="phone-grid">
-        <div class="phone-item"><span class="name">院办</span><span class="num">0832-2262348</span></div>
-        <div class="phone-item"><span class="name">招生办</span><span class="num">0832-2265927</span></div>
-        <div class="phone-item"><span class="name">招生办</span><span class="num">0832-2261439</span></div>
-        <div class="phone-item"><span class="name">成教</span><span class="num">0832-2101395</span></div>
-        <div class="phone-item"><span class="name">学工部</span><span class="num">0832-2269063</span></div>
-        <div class="phone-item"><span class="name">资助中心</span><span class="num">0832-2261729</span></div>
-        <div class="phone-item"><span class="name">校园110</span><span class="num">0832-2265273</span></div>
-        <div class="phone-item"><span class="name">校医院</span><span class="num">24小时值班</span></div>
+    <div class="section-title"><span class="icon-box">📞</span> 常用电话速查</div>
+    <div class="info-card">
+      <div class="info-grid">
+        <div class="info-item"><span class="name">院办</span><span class="val">0832-2262348</span></div>
+        <div class="info-item"><span class="name">招生办</span><span class="val">0832-2265927</span></div>
+        <div class="info-item"><span class="name">招生办</span><span class="val">0832-2261439</span></div>
+        <div class="info-item"><span class="name">成教</span><span class="val">0832-2101395</span></div>
+        <div class="info-item"><span class="name">学工部</span><span class="val">0832-2269063</span></div>
+        <div class="info-item"><span class="name">资助中心</span><span class="val">0832-2261729</span></div>
+        <div class="info-item"><span class="name">校园110</span><span class="val">0832-2265273</span></div>
+        <div class="info-item"><span class="name">校医院</span><span class="val">24小时值班</span></div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title"><span class="num">🔗</span> 常用网址</div>
-    <div class="phone-section">
-      <div class="phone-grid">
-        <div class="phone-item"><span class="name">学校官网</span><span class="num">njvtc.edu.cn</span></div>
-        <div class="phone-item"><span class="name">招生网</span><span class="num">zs.njvtc.edu.cn</span></div>
-        <div class="phone-item"><span class="name">教务网</span><span class="num">jwc.njvtc.edu.cn</span></div>
-        <div class="phone-item"><span class="name">图书馆</span><span class="num">lib.njvtc.edu.cn</span></div>
-        <div class="phone-item"><span class="name">就业网</span><span class="num">jy.njvtc.edu.cn</span></div>
-        <div class="phone-item"><span class="name">学工部</span><span class="num">xsc.njvtc.edu.cn</span></div>
+    <div class="section-title"><span class="icon-box">🔗</span> 常用网址</div>
+    <div class="info-card">
+      <div class="info-grid">
+        <div class="info-item"><span class="name">学校官网</span><span class="val">njvtc.edu.cn</span></div>
+        <div class="info-item"><span class="name">招生网</span><span class="val">zs.njvtc.edu.cn</span></div>
+        <div class="info-item"><span class="name">教务网</span><span class="val">jwc.njvtc.edu.cn</span></div>
+        <div class="info-item"><span class="name">图书馆</span><span class="val">lib.njvtc.edu.cn</span></div>
+        <div class="info-item"><span class="name">就业网</span><span class="val">jy.njvtc.edu.cn</span></div>
+        <div class="info-item"><span class="name">学工部</span><span class="val">xsc.njvtc.edu.cn</span></div>
       </div>
     </div>
   </div>
@@ -264,10 +369,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 </div>
 
 <div class="footer">
+  <div class="divider"></div>
   <p>内江职业技术学院新生助手 · 25章全量升级版</p>
   <p>数据来源：学校官网 + 招生网 + 学工部 + 官方采购公告</p>
   <p>更新日期：2026年8月 · <a href="https://github.com/LLYJ002/njvtc-freshman-guide">GitHub 仓库</a></p>
-  <p style="margin-top:8px;opacity:0.7">💡 具体政策、收费标准及时间安排请以学校官方及各部门最新通知为准</p>
+  <div class="disclaimer">💡 具体政策、收费标准及时间安排请以学校官方及各部门最新通知为准</div>
 </div>
 
 </body>
