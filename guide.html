@@ -6,86 +6,133 @@
 <title>内江职业技术学院新生指南 - 智慧问答</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
-:root{--primary:#4797FF;--primary-dark:#2E80E0;--bg:#FAFCFF;--card:#FFFFFF;--text:#1A1A2E;--text-secondary:#5A6B7C;--border:#E8F0FA;--accent:#FF7E47;--shadow:0 2px 12px rgba(71,151,255,0.08);--radius:12px}
+:root{--primary:#4797FF;--primary-dark:#2E80E0;--primary-light:#E8F4FF;--bg:#F0F5FA;--card:#FFFFFF;--text:#1A2238;--text-secondary:#6B7A90;--border:#E2EAF4;--accent:#FF7E47;--accent-light:#FFF0E8;--green:#52C41A;--shadow-sm:0 1px 3px rgba(71,151,255,0.06);--shadow:0 2px 12px rgba(71,151,255,0.08);--shadow-lg:0 8px 32px rgba(71,151,255,0.12);--radius:14px;--radius-sm:8px}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
-.topbar{position:fixed;top:0;left:0;right:0;height:56px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
-.topbar .back{color:var(--primary);text-decoration:none;font-size:0.9em;font-weight:600}
-.topbar .tabs{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:4px}
-.topbar .tab{padding:6px 18px;border-radius:20px;font-size:0.88em;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all 0.2s;border:none;background:none}
-.topbar .tab.active{background:var(--primary);color:#fff}
-.sidebar{position:fixed;top:56px;left:0;bottom:0;width:260px;background:#fff;border-right:1px solid var(--border);overflow-y:auto;padding:12px 0;display:none}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* Topbar */
+.topbar{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 20px;z-index:100}
+.topbar .back{color:var(--primary);text-decoration:none;font-size:0.88em;font-weight:600;display:flex;align-items:center;gap:4px;transition:opacity 0.2s}
+.topbar .back:hover{opacity:0.7}
+.topbar .tabs{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:2px;background:var(--bg);border-radius:24px;padding:3px}
+.topbar .tab{padding:6px 20px;border-radius:20px;font-size:0.86em;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all 0.25s;border:none;background:none}
+.topbar .tab.active{background:var(--primary);color:#fff;box-shadow:0 2px 8px rgba(71,151,255,0.3)}
+.topbar .tab:hover:not(.active){color:var(--primary)}
+
+/* Sidebar */
+.sidebar{position:fixed;top:56px;left:0;bottom:0;width:240px;background:var(--card);border-right:1px solid var(--border);overflow-y:auto;padding:12px 0;display:none}
 .sidebar.show{display:block}
-.sidebar a{display:block;padding:7px 20px;color:var(--text-secondary);text-decoration:none;font-size:0.84em;transition:all 0.15s;border-left:3px solid transparent}
-.sidebar a:hover{color:var(--primary);background:#F5F9FF}
-.sidebar a.active{color:var(--primary);border-left-color:var(--primary);background:#F0F6FF;font-weight:600}
+.sidebar a{display:block;padding:7px 20px;color:var(--text-secondary);text-decoration:none;font-size:0.82em;transition:all 0.15s;border-left:3px solid transparent;font-weight:500}
+.sidebar a:hover{color:var(--primary);background:var(--primary-light)}
+.sidebar a.active{color:var(--primary);border-left-color:var(--primary);background:var(--primary-light);font-weight:700}
 .sidebar a.new-ch{color:var(--accent)}
-.sidebar .toc-title{padding:10px 20px 6px;font-size:0.72em;color:#9AB;font-weight:700;text-transform:uppercase;letter-spacing:1px}
-.content{margin-top:56px;padding:24px 20px 60px;max-width:880px;margin-left:auto;margin-right:auto}
+.sidebar a.new-ch::after{content:'NEW';font-size:0.7em;background:var(--accent);color:#fff;padding:1px 5px;border-radius:5px;margin-left:6px;font-weight:700}
+.sidebar .toc-title{padding:12px 20px 6px;font-size:0.7em;color:#9AB;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+
+/* Content area */
+.content{margin-top:56px;padding:28px 24px 80px;max-width:880px;margin-left:auto;margin-right:auto}
 .content-inner{max-width:720px;margin:0 auto}
 .content-inner h1{font-size:1.7em;color:var(--primary-dark);margin-bottom:8px;padding-bottom:12px;border-bottom:2px solid var(--border)}
-.content-inner h2{font-size:1.3em;color:var(--primary-dark);margin-top:36px;margin-bottom:14px;padding:8px 16px;background:#F0F6FF;border-radius:8px;border-left:4px solid var(--primary);scroll-margin-top:70px}
-.content-inner h3{font-size:1.08em;color:var(--text);margin-top:22px;margin-bottom:10px}
+.content-inner h2{font-size:1.3em;color:var(--primary-dark);margin-top:40px;margin-bottom:16px;padding:10px 18px;background:linear-gradient(135deg,var(--primary-light),#F5FAFF);border-radius:10px;border-left:4px solid var(--primary);scroll-margin-top:70px;font-weight:700}
+.content-inner h3{font-size:1.06em;color:var(--text);margin-top:24px;margin-bottom:10px;font-weight:700}
 .content-inner p{margin-bottom:10px;line-height:1.85}
 .content-inner ul,.content-inner ol{margin-bottom:14px;padding-left:26px}
 .content-inner li{margin-bottom:5px;line-height:1.75}
-.content-inner blockquote{margin:14px 0;padding:10px 18px;background:#FFF8E8;border-left:4px solid #FFD060;border-radius:0 8px 8px 0;color:#8A6D00}
+.content-inner blockquote{margin:14px 0;padding:12px 18px;background:linear-gradient(135deg,#FFF8E8,#FFFCF2);border-left:4px solid #FFD060;border-radius:0 10px 10px 0;color:#8A6D00}
 .content-inner blockquote p{margin:0}
-.content-inner table{width:100%;border-collapse:collapse;margin:14px 0;font-size:0.86em}
-.content-inner th{background:var(--primary);color:#fff;padding:9px 12px;text-align:left;font-weight:600}
-.content-inner td{padding:7px 12px;border:1px solid var(--border)}
+.content-inner table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.86em;border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow-sm)}
+.content-inner th{background:var(--primary);color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+.content-inner td{padding:8px 14px;border:1px solid var(--border)}
 .content-inner tr:nth-child(even){background:#F8FBFF}
-.content-inner img{max-width:100%;border-radius:8px;margin:10px 0}
-.content-inner a{color:var(--primary)}
+.content-inner img{max-width:100%;border-radius:10px;margin:12px 0}
+.content-inner a{color:var(--primary);text-decoration:none;font-weight:600}
+.content-inner a:hover{text-decoration:underline}
 .content-inner strong{color:var(--text)}
-.content-inner hr{border:none;border-top:2px dashed var(--border);margin:28px 0}
-.content-inner code{background:#F0F4F8;padding:2px 6px;border-radius:4px;font-size:0.88em;color:var(--accent)}
-.menu-toggle{display:none;position:fixed;bottom:20px;right:20px;width:48px;height:48px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:1.3em;cursor:pointer;box-shadow:0 4px 16px rgba(71,151,255,0.35);z-index:101;align-items:center;justify-content:center}
+.content-inner hr{border:none;border-top:2px dashed var(--border);margin:32px 0}
+.content-inner code{background:#F0F4F8;padding:2px 6px;border-radius:4px;font-size:0.88em;color:var(--accent);font-family:"Courier New",monospace}
+
+/* Menu toggle */
+.menu-toggle{display:none;position:fixed;bottom:20px;right:20px;width:48px;height:48px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:1.3em;cursor:pointer;box-shadow:0 4px 20px rgba(71,151,255,0.4);z-index:101;align-items:center;justify-content:center;transition:transform 0.2s}
+.menu-toggle:hover{transform:scale(1.08)}
+
+/* Loading */
 .loading{text-align:center;padding:60px 20px;color:var(--text-secondary)}
-.loading .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 14px}
+.loading .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 14px}
 @keyframes spin{to{transform:rotate(360deg)}}
-/* 问答界面 */
+
+/* ===== QA View ===== */
 .qa-view{display:none}
 .qa-view.active{display:block}
 .read-view{display:none}
 .read-view.active{display:block}
-.qa-header{text-align:center;padding:30px 20px 20px}
-.qa-header h2{font-size:1.5em;color:var(--primary-dark);margin-bottom:6px}
-.qa-header p{color:var(--text-secondary);font-size:0.92em}
-.qa-search-box{max-width:640px;margin:20px auto;position:relative}
-.qa-search-box input{width:100%;padding:14px 52px 14px 20px;border:2px solid var(--border);border-radius:28px;font-size:1em;outline:none;transition:border-color 0.2s;font-family:inherit}
-.qa-search-box input:focus{border-color:var(--primary)}
-.qa-search-box button{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:none;border-radius:50%;background:var(--primary);color:#fff;cursor:pointer;font-size:1.1em;transition:background 0.2s}
-.qa-search-box button:hover{background:var(--primary-dark)}
-.qa-hot{max-width:640px;margin:0 auto 24px}
-.qa-hot .hot-title{font-size:0.82em;color:#9AB;margin-bottom:10px;font-weight:600}
+
+/* QA Hero */
+.qa-hero{text-align:center;padding:36px 20px 24px}
+.qa-hero .ai-icon{width:64px;height:64px;margin:0 auto 14px;background:linear-gradient(135deg,var(--primary),#6AB4FF);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.8em;box-shadow:0 8px 24px rgba(71,151,255,0.25)}
+.qa-hero h2{font-size:1.5em;color:var(--text);margin-bottom:6px;font-weight:800}
+.qa-hero p{color:var(--text-secondary);font-size:0.92em}
+
+/* Search box */
+.qa-search-box{max-width:620px;margin:22px auto 16px;position:relative}
+.qa-search-box input{width:100%;padding:15px 56px 15px 22px;border:2px solid var(--border);border-radius:30px;font-size:0.96em;outline:none;transition:all 0.25s;font-family:inherit;background:var(--card);box-shadow:var(--shadow)}
+.qa-search-box input:focus{border-color:var(--primary);box-shadow:0 0 0 4px var(--primary-light)}
+.qa-search-box button{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:42px;height:42px;border:none;border-radius:50%;background:var(--primary);color:#fff;cursor:pointer;font-size:1.1em;transition:all 0.2s;box-shadow:0 2px 8px rgba(71,151,255,0.3)}
+.qa-search-box button:hover{background:var(--primary-dark);transform:translateY(-50%) scale(1.05)}
+
+/* Hot tags */
+.qa-hot{max-width:620px;margin:0 auto 28px}
+.qa-hot .hot-title{font-size:0.78em;color:#9AB;margin-bottom:10px;font-weight:700;letter-spacing:1px}
 .qa-hot .hot-tags{display:flex;flex-wrap:wrap;gap:8px}
-.qa-hot .hot-tag{padding:6px 16px;background:#fff;border:1px solid var(--border);border-radius:20px;font-size:0.84em;color:var(--primary);cursor:pointer;transition:all 0.2s}
-.qa-hot .hot-tag:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.qa-hot .hot-tag{padding:7px 16px;background:var(--card);border:1px solid var(--border);border-radius:20px;font-size:0.84em;color:var(--primary);cursor:pointer;transition:all 0.2s;font-weight:500}
+.qa-hot .hot-tag:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-2px);box-shadow:0 2px 8px rgba(71,151,255,0.2)}
+
+/* Chat history */
 .qa-history{max-width:680px;margin:0 auto}
-.qa-msg{margin-bottom:16px;animation:fadeIn 0.3s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.qa-msg{margin-bottom:18px;animation:fadeIn 0.35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .qa-msg.user{text-align:right}
-.qa-msg.user .bubble{display:inline-block;background:var(--primary);color:#fff;padding:10px 16px;border-radius:18px 18px 4px 18px;max-width:75%;text-align:left;font-size:0.92em}
-.qa-msg.bot .bubble{display:inline-block;background:#fff;border:1px solid var(--border);padding:14px 18px;border-radius:4px 18px 18px 18px;max-width:88%;text-align:left;font-size:0.9em;box-shadow:var(--shadow);line-height:1.85}
-.qa-msg.bot .bubble h2,.qa-msg.bot .bubble h3{margin-top:8px}
-.qa-msg.bot .bubble h2{font-size:1.05em;background:none;border:none;padding:0;border-left:none}
-.qa-msg.bot .bubble h3{font-size:0.98em}
-.qa-msg.bot .bubble table{font-size:0.88em}
+.qa-msg.user .bubble{display:inline-block;background:var(--primary);color:#fff;padding:10px 18px;border-radius:20px 20px 4px 20px;max-width:75%;text-align:left;font-size:0.9em;box-shadow:0 2px 8px rgba(71,151,255,0.2)}
+.qa-msg.bot .bubble{display:inline-block;background:var(--card);border:1px solid var(--border);padding:16px 20px;border-radius:4px 20px 20px 20px;max-width:88%;text-align:left;font-size:0.9em;box-shadow:var(--shadow);line-height:1.85}
+.qa-msg.bot .bubble h2{font-size:1.02em;background:none;border:none;padding:0;border-left:none;margin-top:10px}
+.qa-msg.bot .bubble h3{font-size:0.96em}
+.qa-msg.bot .bubble table{font-size:0.86em}
 .qa-msg.bot .bubble ul,.qa-msg.bot .bubble ol{padding-left:22px}
 .qa-msg.bot .bubble strong{color:var(--primary-dark)}
-.qa-msg.bot .bubble .ch-ref{display:inline-block;font-size:0.78em;color:var(--primary);background:#E8F4FF;padding:2px 10px;border-radius:10px;margin-top:8px;cursor:pointer}
-.qa-msg.bot .bubble .ch-ref:hover{text-decoration:underline}
-.qa-msg.bot .bubble .disclaimer{margin-top:10px;padding-top:8px;border-top:1px dashed var(--border);font-size:0.8em;color:#9AB}
-.qa-empty{text-align:center;padding:40px 20px;color:var(--text-secondary)}
-.qa-empty .icon{font-size:2.5em;margin-bottom:12px;opacity:0.3}
-.qa-suggest{max-width:680px;margin:16px auto 0}
-.qa-suggest .s-title{font-size:0.78em;color:#9AB;margin-bottom:8px}
+.qa-msg.bot .bubble .ch-ref{display:inline-block;font-size:0.76em;color:var(--primary);background:var(--primary-light);padding:3px 12px;border-radius:12px;margin-top:8px;cursor:pointer;transition:all 0.2s;font-weight:600}
+.qa-msg.bot .bubble .ch-ref:hover{background:var(--primary);color:#fff}
+.qa-msg.bot .bubble .disclaimer{margin-top:12px;padding-top:10px;border-top:1px dashed var(--border);font-size:0.78em;color:#9AB}
+
+/* Empty state */
+.qa-empty{text-align:center;padding:48px 20px;color:var(--text-secondary)}
+.qa-empty .icon{font-size:2.8em;margin-bottom:14px;opacity:0.25}
+.qa-empty p{margin-bottom:4px}
+
+/* Suggestions */
+.qa-suggest{max-width:680px;margin:18px auto 0}
+.qa-suggest .s-title{font-size:0.76em;color:#9AB;margin-bottom:8px;font-weight:700;letter-spacing:1px}
 .qa-suggest .s-items{display:flex;flex-wrap:wrap;gap:8px}
-.qa-suggest .s-item{padding:5px 14px;background:#F5F9FF;border:1px solid var(--border);border-radius:16px;font-size:0.82em;color:var(--primary);cursor:pointer;transition:all 0.2s}
-.qa-suggest .s-item:hover{background:var(--primary);color:#fff}
-@media(max-width:900px){.menu-toggle{display:flex}.sidebar{transform:translateX(-100%);transition:transform 0.3s;z-index:99;width:280px}.sidebar.show{transform:translateX(0);box-shadow:4px 0 20px rgba(0,0,0,0.1)}.content{margin-left:auto;padding:20px 14px 60px}.content-inner{max-width:100%}.topbar .tab{padding:5px 12px;font-size:0.8em}.qa-msg.bot .bubble{max-width:95%}.qa-msg.user .bubble{max-width:85%}}
+.qa-suggest .s-item{padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:16px;font-size:0.8em;color:var(--primary);cursor:pointer;transition:all 0.2s;font-weight:500}
+.qa-suggest .s-item:hover{background:var(--primary-light);border-color:var(--primary)}
+
+/* Bot avatar */
+.qa-msg.bot{display:flex;gap:10px;align-items:flex-start}
+.qa-msg.bot .avatar{width:32px;height:32px;flex-shrink:0;background:linear-gradient(135deg,var(--primary),#6AB4FF);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:0.9em;color:#fff;margin-top:2px;box-shadow:0 2px 8px rgba(71,151,255,0.2)}
+.qa-msg.bot .bubble-wrap{flex:1;min-width:0}
+.qa-msg.user .avatar{display:none}
+
+/* Responsive */
+@media(max-width:900px){
+  .menu-toggle{display:flex}
+  .sidebar{transform:translateX(-100%);transition:transform 0.3s;z-index:99;width:280px;box-shadow:4px 0 20px rgba(0,0,0,0.08)}
+  .sidebar.show{transform:translateX(0)}
+  .content{padding:20px 14px 80px}
+  .content-inner{max-width:100%}
+  .topbar .tab{padding:5px 14px;font-size:0.78em}
+  .qa-msg.bot .bubble{max-width:95%}
+  .qa-msg.user .bubble{max-width:85%}
+  .topbar .back{font-size:0.78em}
+}
 </style>
 </head>
 <body>
@@ -106,8 +153,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
 <!-- 问答视图 -->
 <div class="qa-view active" id="qaView">
   <div class="content">
-    <div class="qa-header">
-      <h2>💡 智慧问答助手</h2>
+    <div class="qa-hero">
+      <div class="ai-icon">🎓</div>
+      <h2>智慧问答助手</h2>
       <p>输入你想了解的问题，自动从25章知识库中匹配答案</p>
     </div>
     <div class="qa-search-box">
@@ -120,9 +168,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",s
     </div>
     <div class="qa-history" id="qaHistory">
       <div class="qa-empty">
-        <div class="icon">🎓</div>
+        <div class="icon">💬</div>
         <p>欢迎来到内江职业技术学院新生智慧问答！</p>
-        <p style="margin-top:4px;font-size:0.86em">点击上方热门问题或在搜索框输入你的问题</p>
+        <p style="margin-top:4px;font-size:0.84em">点击上方热门问题或在搜索框输入你的问题</p>
       </div>
     </div>
     <div class="qa-suggest" id="qaSuggest" style="display:none">
@@ -217,7 +265,6 @@ function switchTab(tab) {
     document.getElementById('tabRead').classList.add('active');
     document.getElementById('sidebar').classList.add('show');
     document.getElementById('menuBtn').style.display = 'flex';
-    // 如果还没渲染过，渲染全文
     if (!document.getElementById('article').dataset.rendered) {
       renderArticle();
     }
@@ -234,7 +281,6 @@ function renderArticle() {
   document.getElementById('article').innerHTML = html;
   document.getElementById('article').dataset.rendered = '1';
 
-  // 给 h2 添加 id
   var headings = document.querySelectorAll('#article h2');
   headings.forEach(function(h) {
     var text = h.textContent.replace(/^#+\s*/, '').trim();
@@ -245,10 +291,8 @@ function renderArticle() {
     }
   });
 
-  // 构建侧边目录
   var sidebar = document.getElementById('sidebar');
   var tocTitle = sidebar.querySelector('.toc-title');
-  // 清除旧目录项（保留 toc-title）
   while (tocTitle.nextSibling) {
     sidebar.removeChild(tocTitle.nextSibling);
   }
@@ -268,7 +312,6 @@ function renderArticle() {
     sidebar.appendChild(a);
   });
 
-  // 滚动高亮
   var tocLinks = sidebar.querySelectorAll('a');
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -301,11 +344,8 @@ function splitChapters(md) {
 }
 
 var allChapters = null;
-
 function getChapters() {
-  if (!allChapters) {
-    allChapters = splitChapters(KB_RAW);
-  }
+  if (!allChapters) allChapters = splitChapters(KB_RAW);
   return allChapters;
 }
 
@@ -317,31 +357,23 @@ function searchAnswer(query) {
   chs.forEach(function(ch) {
     var meta = chapters.find(function(c) { return c.num === ch.num; });
     var score = 0;
-    var contentLower = ch.content.toLowerCase();
 
-    // 关键词匹配
     if (meta) {
       meta.keywords.forEach(function(kw) {
         if (queryLower.indexOf(kw.toLowerCase()) >= 0) score += 10;
         if (queryLower.indexOf(kw.toLowerCase()) >= 0 && queryLower.trim() === kw.toLowerCase()) score += 20;
       });
-      // 标题匹配
       if (queryLower.indexOf(meta.title.toLowerCase()) >= 0) score += 15;
       if (queryLower.indexOf(ch.num) >= 0) score += 10;
     }
 
-    // 内容直接匹配
     var queryChars = query.replace(/[？?，,。.！!、的了吗呢吧啊我你他她有是在什么怎么如何多少]/g, '').trim();
     if (queryChars.length > 1) {
-      var chars = queryChars.split('');
-      var matchCount = 0;
-      chars.forEach(function(c) {
-        if (c.length > 0 && ch.content.indexOf(c) >= 0) matchCount++;
+      queryChars.split('').forEach(function(c) {
+        if (c.length > 0 && ch.content.indexOf(c) >= 0) score += 0.3;
       });
-      score += matchCount * 0.3;
     }
 
-    // 精确短语匹配加分
     var keyPhrases = query.match(/[\u4e00-\u9fff]{2,6}/g);
     if (keyPhrases) {
       keyPhrases.forEach(function(phrase) {
@@ -349,9 +381,7 @@ function searchAnswer(query) {
       });
     }
 
-    if (score > 0) {
-      scores.push({chapter: ch, score: score, meta: meta});
-    }
+    if (score > 0) scores.push({chapter: ch, score: score, meta: meta});
   });
 
   scores.sort(function(a, b) { return b.score - a.score; });
@@ -360,69 +390,52 @@ function searchAnswer(query) {
 
 function extractRelevantSection(chapter, query) {
   var lines = chapter.content.split('\n');
-  // 如果章节较短，返回全文
   if (lines.length <= 20) return chapter.content;
 
-  // 找到最相关的段落
-  var bestStart = 0;
-  var bestScore = 0;
-  var windowSize = 15;
-
+  var bestStart = 0, bestScore = 0, windowSize = 15;
   for (var i = 0; i <= lines.length - windowSize; i++) {
     var block = lines.slice(i, i + windowSize).join('\n');
     var score = 0;
     var keyPhrases = query.match(/[\u4e00-\u9fff]{2,6}/g);
-    if (keyPhrases) {
-      keyPhrases.forEach(function(phrase) {
-        if (block.indexOf(phrase) >= 0) score += 3;
-      });
-    }
-    if (score > bestScore) {
-      bestScore = score;
-      bestStart = i;
-    }
+    if (keyPhrases) keyPhrases.forEach(function(phrase) { if (block.indexOf(phrase) >= 0) score += 3; });
+    if (score > bestScore) { bestScore = score; bestStart = i; }
   }
 
-  // 如果找到高分区段，返回区段+上下文
   if (bestScore > 0) {
     var start = Math.max(0, bestStart - 2);
     var end = Math.min(lines.length, bestStart + windowSize + 3);
-    var result = lines[0] + '\n'; // 保留标题
-    // 如果截断了，包含 h3 标题
-    for (var j = start; j < end; j++) {
-      if (j > 0) result += lines[j] + '\n';
-    }
+    var result = lines[0] + '\n';
+    for (var j = start; j < end; j++) { if (j > 0) result += lines[j] + '\n'; }
     return result;
   }
-
   return chapter.content;
 }
 
 function qaAsk(question) {
-  if (!question) {
-    question = document.getElementById('qaInput').value.trim();
-  }
+  if (!question) question = document.getElementById('qaInput').value.trim();
   if (!question) return;
-
   document.getElementById('qaInput').value = '';
 
   var history = document.getElementById('qaHistory');
-  // 清除空状态
   var empty = history.querySelector('.qa-empty');
   if (empty) empty.remove();
 
-  // 添加用户消息
+  // 用户消息
   var userMsg = document.createElement('div');
   userMsg.className = 'qa-msg user';
   userMsg.innerHTML = '<div class="bubble">' + escapeHtml(question) + '</div>';
   history.appendChild(userMsg);
 
-  // 搜索答案
   var results = searchAnswer(question);
 
-  // 添加机器人消息
+  // 机器人消息
   var botMsg = document.createElement('div');
   botMsg.className = 'qa-msg bot';
+  var avatar = document.createElement('div');
+  avatar.className = 'avatar';
+  avatar.textContent = '🎓';
+  var bubbleWrap = document.createElement('div');
+  bubbleWrap.className = 'bubble-wrap';
   var bubble = document.createElement('div');
   bubble.className = 'bubble';
 
@@ -432,12 +445,9 @@ function qaAsk(question) {
     var topResult = results[0];
     var chapter = topResult.chapter;
     var meta = topResult.meta;
-
-    // 提取相关段落
     var relevantContent = extractRelevantSection(chapter, question);
     var answerHtml = marked.parse(relevantContent);
 
-    // 如果有多个相关章节，也展示
     var extraChapters = '';
     if (results.length > 1 && results[1].score > 5) {
       var related = results.slice(1, 3).map(function(r) {
@@ -449,13 +459,12 @@ function qaAsk(question) {
     bubble.innerHTML = answerHtml + extraChapters + '<div class="ch-ref" onclick="switchTab(\'read\');setTimeout(function(){jumpToChapter(\'' + chapter.num + '\')},200)">📖 查看完整章节：' + chapter.num + '、' + chapter.title + '</div><div class="disclaimer">💡 具体政策、收费标准及时间安排请以内江职业技术学院官方及各部门最新通知为准。</div>';
   }
 
-  botMsg.appendChild(bubble);
+  bubbleWrap.appendChild(bubble);
+  botMsg.appendChild(avatar);
+  botMsg.appendChild(bubbleWrap);
   history.appendChild(botMsg);
 
-  // 滚动到底部
   history.scrollIntoView({behavior: 'smooth', block: 'end'});
-
-  // 显示后续建议问题
   showSuggestions(question, results);
 }
 
@@ -463,27 +472,19 @@ function showSuggestions(question, results) {
   var suggestEl = document.getElementById('qaSuggest');
   var sItems = document.getElementById('sItems');
   sItems.innerHTML = '';
-
   var suggestions = [];
 
-  // 基于相关章节生成建议
   if (results.length > 1) {
     for (var i = 1; i < Math.min(results.length, 4); i++) {
-      if (results[i].score > 3) {
-        var meta = results[i].meta;
-        if (meta) {
-          suggestions.push(meta.title + '是什么？');
-        }
+      if (results[i].score > 3 && results[i].meta) {
+        suggestions.push(results[i].meta.title + '是什么？');
       }
     }
   }
 
-  // 通用建议
   var general = ['报到流程是什么？', '宿舍怎么分配？', '怎么坐车到学校？', '奖学金怎么申请？'];
   general.forEach(function(g) {
-    if (suggestions.indexOf(g) < 0 && suggestions.length < 4) {
-      suggestions.push(g);
-    }
+    if (suggestions.indexOf(g) < 0 && suggestions.length < 4) suggestions.push(g);
   });
 
   if (suggestions.length > 0) {
@@ -520,7 +521,6 @@ function escapeHtml(str) {
 }
 
 // ========== 初始化 ==========
-// 渲染热门问题
 var hotTagsEl = document.getElementById('hotTags');
 hotQuestions.forEach(function(q) {
   var tag = document.createElement('span');
@@ -530,7 +530,6 @@ hotQuestions.forEach(function(q) {
   hotTagsEl.appendChild(tag);
 });
 
-// 移动端菜单
 document.getElementById('menuBtn').addEventListener('click', function() {
   document.getElementById('sidebar').classList.toggle('show');
 });
